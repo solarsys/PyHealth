@@ -5,9 +5,10 @@ It runs on Colab with public or synthetic data and goes from a first model to
 contributing a dataset.
 
 The examples here are shorter and more specialised: one model, task, dataset or
-feature each. Each one was checked against PyHealth 2.1 and runs end to end on
-demo or synthetic data. Its header (the module docstring, or the first cell of a
-notebook) says:
+feature each. The examples listed below were updated for PyHealth 2.1 in the
+examples cleanup (#1479 to #1483, November 2026) and smoke-run end to end on demo
+or synthetic data. Each one's header (the module docstring, or the first cell of
+a notebook) says:
 
 - what it shows,
 - which dataset it needs, and whether that dataset is credentialed,
@@ -24,6 +25,8 @@ Scripts call `set_task`, which starts worker processes, so run them as scripts
 (`python examples/<file>.py`). Don't paste them into a REPL without the
 `if __name__ == "__main__":` guard.
 
+Examples added after the cleanup may not follow this convention yet, and
+saved notebook outputs can still show the paths of the machine they ran on.
 Older examples that no longer run, or that duplicated a maintained one, are in
 [`old/`](old/README.md).
 

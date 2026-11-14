@@ -137,10 +137,11 @@ Additional Examples
 ===================
 
 .. note::
-   The examples below were checked against PyHealth 2.1: each one runs end to
-   end on demo or synthetic data, and its header says which dataset it needs
-   and how to try it without credentials (usually by pointing it at the demo
-   data in ``test-resources/core/``). Older examples that no longer run, or
+   The examples below were updated for PyHealth 2.1 in the examples cleanup
+   (November 2026): each one was smoke-run end to end on demo or synthetic
+   data, and its header says which dataset it needs and how to try it without
+   credentials (usually by pointing it at the demo data in
+   ``test-resources/core/``). Examples added later may not follow this yet. Older examples that no longer run, or
    that duplicate a maintained one, are archived in ``examples/old/`` and are
    not listed here.
 
