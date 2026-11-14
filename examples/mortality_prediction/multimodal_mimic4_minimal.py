@@ -21,11 +21,11 @@ Usage:
 from pyhealth.datasets import MIMIC4Dataset
 from pyhealth.tasks import MultimodalMortalityPredictionMIMIC4
 
-# Paths
-EHR_ROOT = "/srv/local/data/physionet.org/files/mimiciv/2.2"
-NOTE_ROOT = "/srv/local/data/MIMIC-IV/2.0/"
-CXR_ROOT = "/srv/local/data/MIMIC-CXR"
-CACHE_DIR = "/srv/local/data/jw3/pyhealth_cache"
+# Paths: point these at your copies
+EHR_ROOT = "/path/to/mimiciv/2.2"
+NOTE_ROOT = "/path/to/mimic-iv-note/2.2"
+CXR_ROOT = "/path/to/mimic-cxr-jpg"
+CACHE_DIR = "/path/to/cache"
 
 
 if __name__ == "__main__":

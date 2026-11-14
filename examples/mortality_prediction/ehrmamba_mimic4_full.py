@@ -35,7 +35,7 @@ from pyhealth.tasks import InHospitalMortalityMIMIC4
 from pyhealth.trainer import Trainer
 
 # Config: set via env or override here
-EHR_ROOT = os.environ.get("EHR_ROOT", "/srv/local/data/physionet.org/files/mimiciv/2.2/")
+EHR_ROOT = os.environ.get("EHR_ROOT", "/path/to/mimiciv/2.2/")
 _SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 CACHE_BASE = os.environ.get(
     "CACHE_BASE",

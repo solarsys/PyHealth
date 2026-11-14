@@ -33,7 +33,7 @@ if __name__ == "__main__":
     print("=" * 60)
     
     base_dataset = MIMIC4Dataset(
-        ehr_root="/srv/local/data/physionet.org/files/mimiciv/2.2/",
+        ehr_root="/path/to/mimiciv/2.2/",
         ehr_tables=["diagnoses_icd", "procedures_icd", "labevents"],
         dev=True,  # Use development mode for faster testing
         num_workers=4,

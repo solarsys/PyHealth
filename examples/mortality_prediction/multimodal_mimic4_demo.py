@@ -28,10 +28,10 @@ Outputs: by default it writes the sample's lab plot (HTML), lab CSV (with
 --save-labs) and a copy of its X-ray into the current directory. Set
 --plot-labs-dir and --copy-image-dir to change where they go.
 
-Usage (point the roots at your copies; the defaults are lab-server paths):
-    python multimodal_mimic4_demo.py --ehr-root /path/to/mimiciv/2.2
-        --note-root /path/to/mimic-iv-note/2.2 --cxr-root /path/to/mimic-cxr-jpg
-        --cache-dir /path/to/cache   (one command, wrapped here)
+Usage (point the roots at your copies):
+    python multimodal_mimic4_demo.py --ehr-root /path/to/mimiciv/2.2 \\
+        --note-root /path/to/mimic-iv-note/2.2 --cxr-root /path/to/mimic-cxr-jpg \\
+        --cache-dir /path/to/cache
     python multimodal_mimic4_demo.py --dev --skip-benchmark   # smaller, faster
     python multimodal_mimic4_demo.py --save-labs ./labs
 """
@@ -712,9 +712,9 @@ def showcase_sample(sample: Dict[str, Any], sample_dataset=None,
             # Path format: files/p10/p10000032/s50414267/<dicom_id>.jpg
             dicom_id = Path(image_path).stem
             if cxr_root:
-                # Try flattened structure: /srv/local/data/MIMIC-CXR/images/<dicom_id>.jpg
+                # Try flattened structure: <cxr_root>/images/<dicom_id>.jpg
                 flattened_path = os.path.join(
-                    "/srv/local/data/MIMIC-CXR/images", f"{dicom_id}.jpg"
+                    cxr_root, "images", f"{dicom_id}.jpg"
                 )
                 if os.path.exists(flattened_path):
                     print(f"  Using flattened path: {flattened_path}")
@@ -774,25 +774,25 @@ def main():
     parser.add_argument(
         "--ehr-root",
         type=str,
-        default="/srv/local/data/physionet.org/files/mimiciv/2.2",
+        default="/path/to/mimiciv/2.2",
         help="Path to MIMIC-IV EHR root (hosp module)",
     )
     parser.add_argument(
         "--note-root",
         type=str,
-        default="/srv/local/data/MIMIC-IV/2.0/",
+        default="/path/to/mimic-iv-note/2.2",
         help="Path to MIMIC-IV notes root (note module)",
     )
     parser.add_argument(
         "--cxr-root",
         type=str,
-        default="/srv/local/data/MIMIC-CXR",
+        default="/path/to/mimic-cxr-jpg",
         help="Path to MIMIC-CXR root for images",
     )
     parser.add_argument(
         "--cache-dir",
         type=str,
-        default="/srv/local/data/jw3/pyhealth_cache",
+        default="/path/to/cache",
         help="Cache directory for processed data",
     )
     parser.add_argument(

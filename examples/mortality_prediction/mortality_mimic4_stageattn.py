@@ -35,7 +35,7 @@ import torch
 if __name__ == "__main__":
     # STEP 1: Load MIMIC-IV base dataset
     base_dataset = MIMIC4Dataset(
-        ehr_root="/srv/local/data/physionet.org/files/mimiciv/2.2/",
+        ehr_root="/path/to/mimiciv/2.2/",
         ehr_tables=[
             "patients",
             "admissions",
